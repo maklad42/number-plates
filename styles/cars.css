@@ -1,0 +1,19 @@
+.numblock-outer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 900px;
+}
+
+.numblock {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  width: 150px;
+}
+
+.plate {
+  width: 10px;
+  height: 10px;
+  background-color: goldenrod;
+}
