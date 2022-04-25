@@ -16,7 +16,7 @@
   </nav>
   <main>
     <form submit="./cars.php" method="post">
-      <label for="carnumber">Enter number plate:</label>
+      <label for="carnumber">Number plate:</label>
       <input type="text" id="carnumber" name="carnumber" class="carnumber">
     </form>
   </main>
