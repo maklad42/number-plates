@@ -1,3 +1,8 @@
+:root {
+  --details-top: 449px;
+  --details-left: 444px;
+}
+
 main,
 .found {
   display: grid;
@@ -56,11 +61,40 @@ input:before {
   grid-template-columns: repeat(10, 1fr);
   gap: 2px;
   width: 150px;
-  justify-items: center;
+  height:150px;
+  justify-items: stretch;
+  align-items: stretch;
 }
 
 .plate {
-  /* width: 10px;
-  height: 10px; */
-  background-color: goldenrod;
+  border: 1px solid rgb(255, 218, 218);
+  background-color: rgba(244, 244, 244, 0.8);
+}
+
+.plate.spotted {
+  border: 1px solid rgb(52, 192, 78);
+  background-color: rgb(141, 236, 171);
+}
+
+.plate:hover,
+.plate.spotted:hover {
+  border: 1px solid purple;
+}
+
+.details {
+  /* width: 125px; */
+  /* height: 35px; */
+  opacity: 0;
+  border: 1px solid purple;
+  position: absolute;
+  top: var(--details-top);
+  left: var(--details-left);
+  padding: 5px;
+  background-color:rgba(243, 246, 248, 0.95);
+  transition: width .125s, height .125s;
+  transition-timing-function: ease-in-out;
+}
+
+.details.show {
+  opacity: .8;
 }

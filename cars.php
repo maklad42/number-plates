@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cars</title>
   <link rel="stylesheet" href="./styles/cars.css" />
+  <script async src="./scripts/cars.js"></script>
 </head>
 
 <body>
@@ -22,16 +23,12 @@
   </main>
   <div class="found">
     <div class="title">0 ~ 0999</div>
+    <div class="details">
+      #<span class="plate-num"></span><br>
+      <span class="plate-spotted">Still looking...</span>
+    </div>
     <div class="numblock-outer">
-      <?php
-      for ($i = 1; $i <= 10; $i++) : ?>
-        <div class="numblock">
-          <?php
-          for ($x = 0; $x < 100; $x++) : ?>
-            <div data-num="<?php echo $x ?>" class="plate"></div>
-          <?php endfor; ?>
-        </div>
-      <?php endfor; ?>
+      <?php include './includes/blocks.php'; ?>
     </div>
   </div>
 </body>
