@@ -16,9 +16,10 @@
 
   </nav>
   <main>
-    <form submit="./cars.php" method="post">
+    <form submit="./addplate.php" method="post">
       <label for="carnumber">Number plate:</label>
       <input type="text" id="carnumber" name="carnumber" class="carnumber">
+      <input type="submit" id="submit" name="submit" value="Add">
     </form>
   </main>
   <div class="found">

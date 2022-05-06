@@ -28,6 +28,14 @@ main input {
   line-height: 5rem;
   width: 10rem;
   font-size: 3rem;
+  margin-bottom: .5rem;
+}
+
+main input#submit {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  width: 10rem;
 }
 
 .found {
