@@ -31,6 +31,25 @@
     <div class="numblock-outer">
       <?php include './includes/blocks.php'; ?>
     </div>
+    <div class="pager">
+      <div class="pagerlist">
+        <div data-btn="k0" class="pager-btn first">&lt;&lt;</div>
+        <div data-btn="prev" class="pager-btn prev">&lt;</div>
+        <div data-btn="k0" class="pager-btn k0">0</div>
+        <div data-btn="k1" class="pager-btn k1">1</div>
+        <div data-btn="k2" class="pager-btn k2">2</div>
+        <div data-btn="k3" class="pager-btn k3">3</div>
+        <div data-btn="k4" class="pager-btn k4">4</div>
+        <div data-btn="k5" class="pager-btn k5">5</div>
+        <div data-btn="k6" class="pager-btn k6">6</div>
+        <div data-btn="k7" class="pager-btn k7">7</div>
+        <div data-btn="k8" class="pager-btn k8">8</div>
+        <div data-btn="k9" class="pager-btn k9">9</div>
+        <div data-btn="next" class="pager-btn next">&gt;</div>
+        <div data-btn="k9" class="pager-btn last">&gt;&gt;</div>
+      </div>
+      <div id="curPage">-</div>
+    </div>
   </div>
 </body>
 

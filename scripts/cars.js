@@ -1,5 +1,4 @@
 const plates = document.querySelectorAll('.plate');
-console.log(plates[0]);
 
 function showPopup() {
   // Add the "show" class to the details pane to make it visible
@@ -24,5 +23,15 @@ function hidePopup() {
   details.classList.remove('show');
 }
 
+function changePage() {
+  console.log(this.dataset.btn);
+  const offset = document.getElementById('curPage');
+  offset.innerHTML = this.dataset.btn;
+}
+
 plates.forEach((plate) => plate.addEventListener('mouseover', showPopup));
 plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
+
+// add event listener to pager buttons
+const buttons = document.querySelectorAll('.pager-btn');
+buttons.forEach((btn) => btn.addEventListener('click', changePage));

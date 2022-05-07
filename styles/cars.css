@@ -3,6 +3,12 @@
   --details-left: 444px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 main,
 .found {
   display: grid;
@@ -38,10 +44,6 @@ main input#submit {
   width: 10rem;
 }
 
-.found {
-  height: 450px;
-}
-
 .found .title {
  font-size: 2rem;
 }
@@ -59,7 +61,6 @@ input:before {
 .numblock-outer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
   gap: 20px;
   width: 900px;
 }
@@ -68,8 +69,7 @@ input:before {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 2px;
-  width: 150px;
-  height:150px;
+  height:160px;
   justify-items: stretch;
   align-items: stretch;
 }
@@ -105,4 +105,30 @@ input:before {
 
 .details.show {
   opacity: .8;
+}
+
+.pager {
+  width: 900px;
+  text-align: center;
+  padding: 5px;
+  background-color: #ededed;
+  border: 1px solid rgb(255, 218, 218);
+  margin: 20px 0;
+}
+
+.pagerlist {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 10px;
+  max-width: 880px;
+  line-height: 1.35rem;
+}
+
+.pagerlist .pager-btn:hover {
+  background-color: #e0dede;
+  cursor: pointer;
+}
+
+#curPage {
+  display: none;
 }
