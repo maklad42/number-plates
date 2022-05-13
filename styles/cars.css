@@ -124,11 +124,15 @@ input:before {
   line-height: 1.35rem;
 }
 
+.pagerlist .pager-btn {
+  line-height: 1.35rem;
+}
+
 .pagerlist .pager-btn:hover {
   background-color: #e0dede;
   cursor: pointer;
 }
 
 #curPage {
-  display: none;
+  /* display: none; */
 }

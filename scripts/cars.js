@@ -9,6 +9,10 @@ function showPopup() {
   let plateNum = document.querySelector('.plate-num');
   plateNum.innerHTML = this.dataset.num;
 
+  let plateSpotted = document.querySelector('.plate-spotted');
+  plateSpotted.innerHTML =
+    this.dataset.spotted === 'true' ? 'Found it!' : 'Still looking...';
+
   // Set the top and left properties of the details pane
   let root = document.documentElement;
   let newtop = this.getBoundingClientRect().top - 60;
@@ -26,6 +30,9 @@ function hidePopup() {
 function changePage() {
   console.log(this.dataset.btn);
   const offset = document.getElementById('curPage');
+  curOffset = offset.innerHTML;
+  console.log(curOffset);
+
   offset.innerHTML = this.dataset.btn;
 }
 
