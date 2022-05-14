@@ -1,5 +1,3 @@
-const plates = document.querySelectorAll('.plate');
-
 function showPopup() {
   // Add the "show" class to the details pane to make it visible
   let details = document.querySelector('.details');
@@ -27,18 +25,43 @@ function hidePopup() {
   details.classList.remove('show');
 }
 
-function changePage() {
-  console.log(this.dataset.btn);
+async function changePage() {
   const offset = document.getElementById('curPage');
-  curOffset = offset.innerHTML;
-  console.log(curOffset);
+  let newOffset = '0';
+  if (this.dataset.btn) {
+    newOffset = this.dataset.btn;
+  }
+  let curOffset = offset.innerHTML;
 
-  offset.innerHTML = this.dataset.btn;
+  if (newOffset === 'prev') {
+    newOffset = '' + (+curOffset - 1);
+  }
+  if (newOffset === 'next') {
+    newOffset = '' + (+curOffset + 1);
+  }
+  if (+newOffset < 0) {
+    newOffset = '0';
+  }
+  if (+newOffset > 9) {
+    newOffset = '9';
+  }
+
+  offset.innerHTML = newOffset;
+
+  // fetch the new panels
+  let response = await fetch(`./includes/blocks.php?q=${newOffset}`);
+  let text = await response.text(); // read response body as text
+
+  const panels = document.querySelector('.numblock-wrapper');
+  panels.innerHTML = text;
+
+  const plates = document.querySelectorAll('.plate');
+  plates.forEach((plate) => plate.addEventListener('mouseover', showPopup));
+  plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
 }
-
-plates.forEach((plate) => plate.addEventListener('mouseover', showPopup));
-plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
 
 // add event listener to pager buttons
 const buttons = document.querySelectorAll('.pager-btn');
 buttons.forEach((btn) => btn.addEventListener('click', changePage));
+
+changePage();

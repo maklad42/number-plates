@@ -46,6 +46,8 @@ main input#submit {
 
 .found .title {
  font-size: 2rem;
+ text-align: center;
+ margin: 1.5rem 0.5rem;
 }
 
 label {
@@ -131,8 +133,4 @@ input:before {
 .pagerlist .pager-btn:hover {
   background-color: #e0dede;
   cursor: pointer;
-}
-
-#curPage {
-  /* display: none; */
 }
