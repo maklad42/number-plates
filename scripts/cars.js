@@ -28,7 +28,7 @@ function hidePopup() {
 async function changePage() {
   const offset = document.getElementById('curPage');
   let newOffset = '0';
-  if (this.dataset.btn) {
+  if (this.dataset != undefined) {
     newOffset = this.dataset.btn;
   }
   let curOffset = offset.innerHTML;
@@ -60,8 +60,20 @@ async function changePage() {
   plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
 }
 
+async function addPlate() {
+  const msg = document.querySelector('.message');
+
+  let res = await fetch('./includes/addplate.php?plate="1234"');
+  let msgtext = await res.text();
+
+  msg.innerHTML = msgtext;
+}
+
 // add event listener to pager buttons
 const buttons = document.querySelectorAll('.pager-btn');
 buttons.forEach((btn) => btn.addEventListener('click', changePage));
+
+const addPageBtn = document.getElementById('addpage');
+addPageBtn.addEventListener('click', addPlate);
 
 changePage();

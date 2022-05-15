@@ -15,7 +15,8 @@ main,
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
-  margin: 25px;
+  margin: 25px auto;
+  max-width: 1200px;
   box-shadow: 0 5px 15px lightgrey
 }
 
@@ -133,4 +134,8 @@ input:before {
 .pagerlist .pager-btn:hover {
   background-color: #e0dede;
   cursor: pointer;
+}
+
+#curPage {
+  display: none;
 }
