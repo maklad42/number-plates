@@ -63,7 +63,9 @@ async function changePage() {
 async function addPlate() {
   const msg = document.querySelector('.message');
 
-  let res = await fetch('./includes/addplate.php?plate="1234"');
+  let plate = document.querySelector('.carnumber').value;
+
+  let res = await fetch(`./includes/addplate.php?plate=${plate}`);
   let msgtext = await res.text();
 
   msg.innerHTML = msgtext;
@@ -73,7 +75,7 @@ async function addPlate() {
 const buttons = document.querySelectorAll('.pager-btn');
 buttons.forEach((btn) => btn.addEventListener('click', changePage));
 
-const addPageBtn = document.getElementById('addpage');
+const addPageBtn = document.getElementById('addplate');
 addPageBtn.addEventListener('click', addPlate);
 
 changePage();

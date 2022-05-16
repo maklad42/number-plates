@@ -18,11 +18,11 @@
         <?php
         for ($x = 0; $x < 100; $x++) : ?>
           <?php $pos = $x + ($i * 100) + ($offset * 1000); ?>
-          <div data-num="<?php echo $pos ?>" data-spotted="<?php echo $plates[$pos]; ?>" class="plate<?php
-                                                                                                      if ($plates[$pos] === "true") {
-                                                                                                        echo " spotted";
-                                                                                                      }
-                                                                                                      ?>">
+          <div data-num="<?php echo $pos ?>" data-spotted="<?php echo $plates[$pos]['found']; ?>" class="plate<?php
+                                                                                                              if ($plates[$pos]['found'] === "true") {
+                                                                                                                echo " spotted";
+                                                                                                              }
+                                                                                                              ?>">
           </div>
         <?php endfor; ?>
       </div>
