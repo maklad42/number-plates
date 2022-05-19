@@ -61,7 +61,7 @@ async function changePage() {
 }
 
 async function addPlate() {
-  const msg = document.querySelector('.message');
+  const msg = document.querySelector('.message-wrapper');
 
   let plate = document.querySelector('.carnumber').value;
 

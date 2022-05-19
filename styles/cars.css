@@ -25,6 +25,26 @@ main {
   height: 350px;
 }
 
+main .message-wrapper {
+  width: 100%;
+}
+
+main .message {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+main .message.newplate {
+  background-color: #e1f7e1;
+  border-left: 5px solid #8ec88e;
+}
+
+main .message.duplicate {
+  background-color: #f7e3e1;
+  border-left: 5px solid #df8989;
+}
+
 main form {
   display: flex;
   flex-direction: column;

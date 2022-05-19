@@ -9,6 +9,7 @@ if (isset($_REQUEST['plate'])) : ?>
   $n = $_REQUEST['plate'];
   if ($plates[$n]['found'] == 'true') {
     $status = 'Sorry, ' . $n . ' is already in the DB.';
+    $added = 'duplicate';
   } else {
     // set date
     $dt = date('Y-m-d');
@@ -27,9 +28,10 @@ if (isset($_REQUEST['plate'])) : ?>
 
     // display the status of the request
     $status = 'Added ' . $n . ' on ' . $dt;
+    $added = 'newplate';
   }
   ?>
 
-  <div class="msg-wrapper"><?php echo $status; ?></div>
+  <div class="message <?php echo $added . '">' . $status; ?></div>
 
 <?php endif ?>
