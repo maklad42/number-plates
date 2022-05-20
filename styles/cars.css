@@ -56,6 +56,7 @@ main input {
   width: 10rem;
   font-size: 3rem;
   margin-bottom: .5rem;
+  text-align: center;
 }
 
 main input#submit {

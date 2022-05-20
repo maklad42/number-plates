@@ -25,7 +25,20 @@ function hidePopup() {
   details.classList.remove('show');
 }
 
-async function changePage() {
+async function loadPanels(panel) {
+  // fetch the new panels
+  let response = await fetch(`./includes/blocks.php?q=${panel}`);
+  let text = await response.text(); // read response body as text
+
+  const panels = document.querySelector('.numblock-wrapper');
+  panels.innerHTML = text;
+
+  const plates = document.querySelectorAll('.plate');
+  plates.forEach((plate) => plate.addEventListener('mouseover', showPopup));
+  plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
+}
+
+function changePage() {
   const offset = document.getElementById('curPage');
   let newOffset = '0';
   if (this.dataset != undefined) {
@@ -48,16 +61,7 @@ async function changePage() {
 
   offset.innerHTML = newOffset;
 
-  // fetch the new panels
-  let response = await fetch(`./includes/blocks.php?q=${newOffset}`);
-  let text = await response.text(); // read response body as text
-
-  const panels = document.querySelector('.numblock-wrapper');
-  panels.innerHTML = text;
-
-  const plates = document.querySelectorAll('.plate');
-  plates.forEach((plate) => plate.addEventListener('mouseover', showPopup));
-  plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
+  loadPanels(newOffset);
 }
 
 async function addPlate() {
@@ -69,6 +73,10 @@ async function addPlate() {
   let msgtext = await res.text();
 
   msg.innerHTML = msgtext;
+
+  const k = Math.floor(plate / 1000);
+
+  loadPanels(k);
 }
 
 // add event listener to pager buttons
