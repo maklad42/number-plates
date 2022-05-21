@@ -7,28 +7,36 @@ if (isset($_REQUEST['plate'])) : ?>
   $plates = json_decode($json, true);
 
   $n = $_REQUEST['plate'];
-  if ($plates[$n]['found'] == 'true') {
-    $status = 'Sorry, ' . $n . ' is already in the DB.';
-    $added = 'duplicate';
+
+  // check if plate is between 1 and 9999
+  if (intval($n) < 1 || intval($n) > 9999) {
+    $status = "Please enter a number between 1 and 9999";
+    $added = "error";
   } else {
-    // set date
-    $dt = date('Y-m-d');
 
-    // create backup file
-    $bak = json_encode($plates, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
-    file_put_contents('../data/bak/cars_' . $dt . '.json', $bak);
+    if ($plates[$n]['found'] == 'true') {
+      $status = 'Sorry, ' . $n . ' is already in the DB.';
+      $added = 'duplicate';
+    } else {
+      // set date
+      $dt = date('Y-m-d');
 
-    // update plates list
-    $plates[$n]['found'] = 'true';
-    $plates[$n]['when'] = $dt;
+      // create backup file
+      $bak = json_encode($plates, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
+      file_put_contents('../data/bak/cars_' . $dt . '.json', $bak);
 
-    // create new file
-    $newfile = json_encode($plates, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
-    file_put_contents('../data/cars.json', $newfile);
+      // update plates list
+      $plates[$n]['found'] = 'true';
+      $plates[$n]['when'] = $dt;
 
-    // display the status of the request
-    $status = 'Added ' . $n . ' on ' . $dt;
-    $added = 'newplate';
+      // create new file
+      $newfile = json_encode($plates, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
+      file_put_contents('../data/cars.json', $newfile);
+
+      // display the status of the request
+      $status = 'Added ' . $n . ' on ' . $dt;
+      $added = 'newplate';
+    }
   }
   ?>
 

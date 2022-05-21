@@ -40,7 +40,8 @@ main .message.newplate {
   border-left: 5px solid #8ec88e;
 }
 
-main .message.duplicate {
+main .message.duplicate,
+main .message.error {
   background-color: #f7e3e1;
   border-left: 5px solid #df8989;
 }
@@ -96,6 +97,13 @@ input:before {
   height:160px;
   justify-items: stretch;
   align-items: stretch;
+}
+
+.plate[data-num="0"],
+.plate[data-num="0"]:hover,
+.plate.spotted[data-num="0"]:hover {
+  border: none;
+  background-color: inherit;
 }
 
 .plate {

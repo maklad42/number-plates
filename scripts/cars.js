@@ -1,4 +1,8 @@
 function showPopup() {
+  // don't show popup on the 0 plate
+  if (this.dataset.num === '0') {
+    return;
+  }
   // Add the "show" class to the details pane to make it visible
   let details = document.querySelector('.details');
   details.classList.add('show');
@@ -76,7 +80,9 @@ async function addPlate() {
 
   const k = Math.floor(plate / 1000);
 
-  loadPanels(k);
+  if (k >= 0 && k < 10) {
+    loadPanels(k);
+  }
 }
 
 // add event listener to pager buttons
