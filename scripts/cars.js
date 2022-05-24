@@ -71,7 +71,8 @@ function changePage() {
 async function addPlate() {
   const msg = document.querySelector('.message-wrapper');
 
-  let plate = document.querySelector('.carnumber').value;
+  let inputVal = document.querySelector('.carnumber');
+  let plate = inputVal.value;
 
   let res = await fetch(`./includes/addplate.php?plate=${plate}`);
   let msgtext = await res.text();
@@ -83,6 +84,9 @@ async function addPlate() {
   if (k >= 0 && k < 10) {
     loadPanels(k);
   }
+
+  inputVal.value = '';
+  inputVal.focus();
 }
 
 // add event listener to pager buttons
