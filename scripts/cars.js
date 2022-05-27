@@ -37,6 +37,9 @@ async function loadPanels(panel) {
   const panels = document.querySelector('.numblock-wrapper');
   panels.innerHTML = text;
 
+  const offset = document.getElementById('curPage');
+  offset.innerHTML = panel;
+
   const plates = document.querySelectorAll('.plate');
   plates.forEach((plate) => plate.addEventListener('mouseover', showPopup));
   plates.forEach((plate) => plate.addEventListener('mouseout', hidePopup));
@@ -62,8 +65,6 @@ function changePage() {
   if (+newOffset > 9) {
     newOffset = '9';
   }
-
-  offset.innerHTML = newOffset;
 
   loadPanels(newOffset);
 }
