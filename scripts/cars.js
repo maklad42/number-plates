@@ -46,6 +46,7 @@ async function loadPanels(panel) {
 }
 
 function changePage() {
+  console.log(this);
   const offset = document.getElementById('curPage');
   let newOffset = '0';
   if (this.dataset != undefined) {
@@ -64,6 +65,12 @@ function changePage() {
   }
   if (+newOffset > 9) {
     newOffset = '9';
+  }
+
+  if (this.classList) {
+    const buttons = document.querySelectorAll('.pager-btn');
+    buttons.forEach((btn) => btn.classList.remove('active'));
+    this.classList.add('active');
   }
 
   loadPanels(newOffset);

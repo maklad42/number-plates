@@ -173,6 +173,10 @@ input:before {
   cursor: pointer;
 }
 
+.pagerlist .pager-btn.active {
+  border-bottom: 2px solid rebeccapurple;
+}
+
 #curPage {
   display: none;
 }
