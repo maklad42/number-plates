@@ -2040,8 +2040,8 @@
         "when": "-"
     },
     "510": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "511": {
         "found": "false",
@@ -4376,8 +4376,8 @@
         "when": "-"
     },
     "1094": {
-        "found": "true",
-        "when": "2022-06-08"
+        "found": "false",
+        "when": "-"
     },
     "1095": {
         "found": "false",
@@ -4428,8 +4428,8 @@
         "when": "2022-06-01"
     },
     "1107": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "1108": {
         "found": "false",
@@ -9096,8 +9096,8 @@
         "when": "-"
     },
     "2274": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "2275": {
         "found": "false",
@@ -9428,8 +9428,8 @@
         "when": "2022-06-07"
     },
     "2357": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "2358": {
         "found": "false",
@@ -13988,8 +13988,8 @@
         "when": "-"
     },
     "3497": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "3498": {
         "found": "false",
@@ -16000,8 +16000,8 @@
         "when": "-"
     },
     "4000": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "4001": {
         "found": "false",
@@ -17652,8 +17652,8 @@
         "when": "-"
     },
     "4413": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "4414": {
         "found": "false",
@@ -26200,8 +26200,8 @@
         "when": "-"
     },
     "6550": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "6551": {
         "found": "false",
@@ -28000,8 +28000,8 @@
         "when": "-"
     },
     "7000": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "7001": {
         "found": "false",
@@ -31104,8 +31104,8 @@
         "when": "2022-05-24"
     },
     "7776": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "7777": {
         "found": "true",
@@ -33972,8 +33972,8 @@
         "when": "-"
     },
     "8493": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "8494": {
         "found": "false",
@@ -39556,8 +39556,8 @@
         "when": "-"
     },
     "9889": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "9890": {
         "found": "false",
@@ -39616,12 +39616,12 @@
         "when": "-"
     },
     "9904": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "9905": {
-        "found": "true",
-        "when": "2022-06-09"
+        "found": "false",
+        "when": "-"
     },
     "9906": {
         "found": "false",
