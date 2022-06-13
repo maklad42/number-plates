@@ -29,6 +29,14 @@ function hidePopup() {
   details.classList.remove('show');
 }
 
+function showActivePage(newOffset) {
+  const buttons = document.querySelectorAll('.pager-btn');
+  buttons.forEach((btn) => btn.classList.remove('active'));
+
+  const activeBtn = document.querySelector(`[data-btn="${newOffset}"]`);
+  activeBtn.classList.add('active');
+}
+
 async function loadPanels(panel) {
   // fetch the new panels
   let response = await fetch(`./includes/blocks.php?q=${panel}`);
@@ -60,17 +68,15 @@ function changePage() {
   if (newOffset === 'next') {
     newOffset = '' + (+curOffset + 1);
   }
-  if (+newOffset < 0) {
+  if (+newOffset < 0 || newOffset === 'first') {
     newOffset = '0';
   }
-  if (+newOffset > 9) {
+  if (+newOffset > 9 || newOffset === 'last') {
     newOffset = '9';
   }
 
   if (this.classList) {
-    const buttons = document.querySelectorAll('.pager-btn');
-    buttons.forEach((btn) => btn.classList.remove('active'));
-    this.classList.add('active');
+    showActivePage(newOffset);
   }
 
   loadPanels(newOffset);
@@ -91,6 +97,7 @@ async function addPlate() {
 
   if (k >= 0 && k < 10) {
     loadPanels(k);
+    showActivePage(k);
   }
 
   inputVal.value = '';
