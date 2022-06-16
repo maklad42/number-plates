@@ -34,15 +34,18 @@
     <?php for ($i = 0; $i < 10; $i++) : ?>
       <div class="numblock" data-offset="<?php echo $offset; ?>">
         <?php
+        $count = 0;
         for ($x = 0; $x < 100; $x++) : ?>
           <?php $pos = $x + ($i * 100) + ($offset * 1000); ?>
           <div data-num="<?php echo $pos ?>" data-spotted="<?php echo $plates[$pos]['found']; ?>" class="plate<?php
                                                                                                               if ($plates[$pos]['found'] === "true") {
+                                                                                                                $count += 1;
                                                                                                                 echo " spotted";
                                                                                                               }
                                                                                                               ?>">
           </div>
         <?php endfor; ?>
+        <div class="platefooter wide"><?php echo $count; ?>% found</div>
       </div>
     <?php endfor; ?>
   </div>
